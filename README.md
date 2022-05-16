@@ -1,2 +1,2 @@
 # blazar-frontend
-Repository for frontend Blazar app
+Repository for Blazar app frontend
