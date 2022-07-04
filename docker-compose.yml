@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  frontend:
+    build:
+      context: .
+    container_name: "blazar-frontend"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:9000"
+#    command: quasar run dev
