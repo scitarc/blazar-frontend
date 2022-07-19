@@ -1,30 +1,17 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
           Blazar
         </q-toolbar-title>
-
-        <div>Blazar v0.1.0</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      bordered
-
-    >
-      <q-list>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+      <q-list style="margin-top: 10px">
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -36,17 +23,23 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue';
-
 const linksList = [
   {
+    title: 'Home',
+    caption: 'Algum texto auxiliar aqui',
+    icon: 'home',
+    link: '/'
+  },
+  {
     title: 'Pesquisar',
-    caption: 'Encontre aqui alguma coisa',
+    caption: 'Encontre aqui outra coisa',
     icon: 'search',
     link: '/search'
   }
@@ -54,11 +47,7 @@ const linksList = [
 
 export default defineComponent({
   name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
+  components: { EssentialLink },
   setup () {
     const leftDrawerOpen = ref(false)
 

@@ -1,14 +1,9 @@
 <template>
   <q-page class="row items-center justify-evenly">
     <div>
-      Estamos construindo algo incrível! Abra o menu e tente pesquisar alguma coisa!
+
     </div>
-<!--    <example-component-->
-<!--      title="Example component"-->
-<!--      active-->
-<!--      :todos="todos"-->
-<!--      :meta="meta"-->
-<!--    ></example-component>-->
+
   </q-page>
 </template>
 
